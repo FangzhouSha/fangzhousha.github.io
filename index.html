@@ -67,14 +67,19 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #eaf4f4;
-      --text: #222;
-      --subtext: #556;
-      --link: #0074a2;
-      --nav-height: 72px;
+      --bg: #fdfcfa;
+      --text: #1b1b1b;
+      --subtext: #5c5c5c;
+      --link: #0b5394;
+      --rule: #e7e4dd;
+      --nav-height: 64px;
+      --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     }
 
     html {
@@ -86,14 +91,15 @@
       padding: 0 1.5rem;
       background: var(--bg);
       color: var(--text);
-      font-family: 'Source Sans 3', system-ui, sans-serif;
-      line-height: 1.95;
-      font-size: 19px;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
 
     main {
-      max-width: 800px;
-      margin: calc(var(--nav-height) + 3.5vh) auto 8vh;
+      max-width: 780px;
+      margin: calc(var(--nav-height) + 4vh) auto 8vh;
     }
 
     .nav {
@@ -104,35 +110,34 @@
       z-index: 1000;
       display: flex;
       flex-wrap: wrap;
-      gap: 1.6rem;
+      gap: 1.8rem;
       align-items: center;
-      padding: 1rem 1.5rem;
-      font-size: 1.14rem;
-      background: rgba(234, 244, 244, 0.96);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+      padding: 1.1rem 1.5rem;
+      font-size: 0.95rem;
+      background: rgba(253, 252, 250, 0.96);
+      border-bottom: 1px solid var(--rule);
     }
 
     .nav a {
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 0.01em;
-      color: var(--link);
+      color: var(--text);
       text-decoration: none;
     }
 
     .nav a:hover {
-      text-decoration: underline;
+      color: var(--link);
     }
 
     section {
-      scroll-margin-top: 95px;
+      scroll-margin-top: 90px;
     }
 
     .header {
       display: flex;
-      align-items: flex-start;
-      gap: 1.9rem;
-      margin-bottom: 1.4rem;
+      align-items: center;
+      gap: 2.2rem;
+      margin-bottom: 1.6rem;
     }
 
     .header-text {
@@ -142,48 +147,45 @@
 
     .profile-photo {
       flex-shrink: 0;
-      width: 164px;
-      height: 164px;
+      width: 168px;
+      height: 168px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid rgba(0,0,0,0.08);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid var(--rule);
       cursor: pointer;
-      transition: transform 0.15s ease-out;
-    }
-
-    .profile-photo:hover {
-      transform: scale(1.02);
     }
 
     h1 {
-      font-family: 'Source Serif Pro', serif;
-      font-size: clamp(2.9rem, 5vw, 3.5rem);
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5vw, 3.2rem);
       font-weight: 600;
-      margin: 0 0 0.18em;
+      letter-spacing: -0.012em;
+      margin: 0 0 0.3rem;
       color: var(--text);
-      line-height: 1.12;
+      line-height: 1.1;
     }
 
     h2 {
-      font-size: 1.3rem;
+      font-size: 1.06rem;
       font-weight: 400;
       color: var(--subtext);
-      margin: 0 0 0.65rem;
+      margin: 0 0 0.75rem;
       line-height: 1.5;
     }
 
     h3 {
-      font-size: 1.52rem;
+      font-family: var(--serif);
+      font-size: 1.6rem;
       font-weight: 600;
-      margin: 3rem 0 0.8rem;
+      letter-spacing: -0.005em;
+      margin: 3.2rem 0 1.1rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px solid var(--rule);
       color: var(--text);
-      font-family: 'Source Serif Pro', serif;
     }
 
     p {
       margin: 1rem 0;
-      font-size: 1.14rem;
     }
 
     a {
@@ -194,104 +196,104 @@
 
     a:hover {
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .paper-entry,
     .teaching-entry {
-      margin: 1.1rem 0 1.65rem;
-      font-size: 1.1rem;
+      margin: 1rem 0 1.6rem;
     }
 
     .paper-entry strong,
     .teaching-entry strong {
-      font-size: 1.12rem;
       font-weight: 600;
     }
 
     .paper-note,
     .subtle {
       color: var(--subtext);
-      font-size: 1.03rem;
+      font-size: 0.94rem;
       font-weight: 400;
     }
 
     .cn-name {
-      font-family: 'Source Sans 3', system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-family: var(--serif), 'Songti SC', 'Noto Serif SC', 'Noto Serif CJK SC', 'SimSun', serif;
       font-size: 0.5em;
       font-weight: 400;
+      letter-spacing: 0.05em;
       color: var(--subtext);
-      margin-left: 0.35em;
+      margin-left: 0.4em;
       white-space: nowrap;
     }
 
     .jm-badge {
-      display: inline-block;
-      margin-top: 0.2rem;
-      padding: 0.15rem 0.75rem;
-      border-radius: 999px;
-      background: #d5ebeb;
-      color: #005a7e;
-      font-size: 1rem;
+      display: block;
+      font-size: 0.9rem;
       font-weight: 600;
-      line-height: 1.6;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--link);
     }
 
     .doc-links {
-      margin-top: 0.35rem;
-      font-size: 1.08rem;
+      margin-top: 0.3rem;
+      font-size: 0.97rem;
     }
 
     .group-label {
-      margin-top: 1.45rem;
-      margin-bottom: 0.35rem;
-      font-size: 1.12rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      color: var(--text);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--subtext);
     }
 
     .contact {
-      margin-top: 1.9rem;
-      font-size: 1.1rem;
+      margin-top: 1.6rem;
     }
 
     footer {
-      margin-top: 4rem;
-      font-size: 1rem;
+      margin-top: 4.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.88rem;
       color: var(--subtext);
     }
 
     @media (max-width: 700px) {
       :root {
-        --nav-height: 68px;
+        --nav-height: 60px;
       }
 
       body {
-        font-size: 18px;
+        font-size: 16px;
         padding: 0 1rem;
       }
 
       main {
-        margin-top: calc(var(--nav-height) + 2.5vh);
+        margin-top: calc(var(--nav-height) + 3vh);
       }
 
       .nav {
-        gap: 1.2rem;
-        padding: 0.9rem 1rem;
-        font-size: 1.04rem;
+        gap: 1.3rem;
+        padding: 1rem;
       }
 
       .header {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: flex-start;
+        gap: 1.2rem;
       }
 
       .profile-photo {
-        width: 136px;
-        height: 136px;
+        width: 128px;
+        height: 128px;
       }
 
       h3 {
-        font-size: 1.38rem;
+        font-size: 1.4rem;
       }
     }
   </style>
@@ -345,7 +347,7 @@
       <h3>Research</h3>
 
       <div class="paper-entry">
-        <strong>Job Market Paper</strong><br>
+        <div class="group-label" style="margin-top: 0">Job Market Paper</div>
         <strong>Fiscal Backing and Heterogeneous Household Portfolios</strong>
         <div class="paper-note">Best Third-Year Paper, Department of Economics, SMU</div>
         <div class="paper-note">Outstanding Graduate Student Award, Southern Economic Association (2025)</div>
