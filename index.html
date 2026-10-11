@@ -27,7 +27,7 @@
     "name": "Fangzhou Sha",
     "alternateName": "沙芳洲",
     "url": "https://fangzhousha.github.io/",
-    "image": "https://fangzhousha.github.io/FangzhouSha.png",
+    "image": "https://fangzhousha.github.io/Headshot.jpeg",
     "email": "mailto:fsha@smu.edu",
     "jobTitle": "Ph.D. Candidate in Economics",
     "affiliation": {
@@ -133,26 +133,26 @@
       scroll-margin-top: 90px;
     }
 
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 2.2rem;
-      margin-bottom: 1.6rem;
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 3rem;
+      align-items: start;
     }
 
-    .header-text {
-      flex: 1;
-      min-width: 0;
+    .hero-text .intro {
+      margin-top: 1.6rem;
     }
 
     .profile-photo {
-      flex-shrink: 0;
-      width: 168px;
-      height: 168px;
-      border-radius: 50%;
+      width: 240px;
+      height: 360px;
       object-fit: cover;
-      border: 1px solid var(--rule);
+      object-position: center top;
+      border-radius: 3px;
+      display: block;
       cursor: pointer;
+      transition: opacity 0.25s ease;
     }
 
     h1 {
@@ -281,15 +281,15 @@
         padding: 1rem;
       }
 
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.2rem;
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
       }
 
       .profile-photo {
-        width: 128px;
-        height: 128px;
+        order: -1;
+        width: 180px;
+        height: 270px;
       }
 
       h3 {
@@ -306,41 +306,40 @@
   </nav>
 
   <main>
-    <section id="home">
-      <div class="header">
-        <img
-          src="FangzhouSha.png"
-          alt="Photo of Fangzhou Sha"
-          class="profile-photo"
-          id="profile-photo"
-        >
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>Fangzhou Sha <span class="cn-name" lang="zh-CN">沙芳洲</span></h1>
+        <h2>Ph.D. Candidate in Economics<br>Southern Methodist University</h2>
+        <span class="jm-badge">On the 2026–2027 Job Market</span>
 
-        <div class="header-text">
-          <h1>Fangzhou Sha <span class="cn-name" lang="zh-CN">沙芳洲</span></h1>
-          <h2>Ph.D. Candidate in Economics · Southern Methodist University</h2>
-          <span class="jm-badge">On the 2026–2027 Job Market</span>
+        <p class="intro">
+          I am a Ph.D. candidate in Economics at Southern Methodist University. My research is in macroeconomics, with a focus on monetary-fiscal interactions, inflation, and heterogeneous-agent models.
+        </p>
+
+        <p class="subtle">
+          <a href="https://www.smu.edu/moody/funding/deans-dissertation-fellowships/fangzhou-sha" target="_blank" rel="noopener">Dean's Dissertation Fellow</a>, Moody School of Graduate and Advanced Studies, 2026–2027
+        </p>
+
+        <div class="doc-links">
+          <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Job Market Paper (PDF)</a>
+          &nbsp;·&nbsp;
+          <a href="FangzhouSha_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.linkedin.com/in/fangzhou-sha-0941a93a7/" target="_blank" rel="noopener me">LinkedIn</a>
         </div>
+
+        <p class="contact">
+          <a href="mailto:fsha@smu.edu">fsha@smu.edu</a>
+        </p>
       </div>
 
-      <p>
-        I am a Ph.D. candidate in Economics at Southern Methodist University. My research is in macroeconomics, with a focus on monetary-fiscal interactions, inflation, and heterogeneous-agent models.
-      </p>
-
-      <p class="subtle">
-        <a href="https://www.smu.edu/moody/funding/deans-dissertation-fellowships/fangzhou-sha" target="_blank" rel="noopener">Dean's Dissertation Fellow</a>, Moody School of Graduate and Advanced Studies, 2026–2027
-      </p>
-
-      <div class="doc-links">
-        <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Job Market Paper (PDF)</a>
-        &nbsp;·&nbsp;
-        <a href="FangzhouSha_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
-        &nbsp;·&nbsp;
-        <a href="https://www.linkedin.com/in/fangzhou-sha-0941a93a7/" target="_blank" rel="noopener me">LinkedIn</a>
-      </div>
-
-      <p class="contact">
-        <a href="mailto:fsha@smu.edu">fsha@smu.edu</a>
-      </p>
+      <img
+        src="Portrait.jpeg"
+        alt="Photo of Fangzhou Sha"
+        class="profile-photo"
+        id="profile-photo"
+        width="240" height="360"
+      >
     </section>
 
     <section id="research">
@@ -414,15 +413,26 @@
   </main>
 
   <script>
-    const img1 = "FangzhouSha.png";
-    const img2 = "FangzhouSha_alt.png";
-
+    const photos = ["Portrait.jpeg", "FangzhouSha.png", "FangzhouSha_alt.png"];
     const profileImg = document.getElementById("profile-photo");
-    let showingFirst = true;
+    let current = 0;
 
     profileImg.addEventListener("click", () => {
-      showingFirst = !showingFirst;
-      profileImg.src = showingFirst ? img1 : img2;
+      const next = (current + 1) % photos.length;
+      profileImg.style.opacity = 0;
+      setTimeout(() => {
+        profileImg.src = photos[next];
+        current = next;
+      }, 200);
+    });
+
+    profileImg.addEventListener("load", () => {
+      profileImg.style.opacity = 1;
+    });
+
+    profileImg.addEventListener("error", () => {
+      current = 0;
+      profileImg.src = photos[0];
     });
   </script>
 </body>
