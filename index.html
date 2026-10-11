@@ -334,7 +334,7 @@
       </div>
 
       <img
-        src="Portrait.jpeg"
+        src="Headshot.jpeg"
         alt="Photo of Fangzhou Sha"
         class="profile-photo"
         id="profile-photo"
@@ -413,7 +413,7 @@
   </main>
 
   <script>
-    const photos = ["Portrait.jpeg", "FangzhouSha.png", "FangzhouSha_alt.png"];
+    const photos = ["Headshot.jpeg", "FangzhouSha.png", "FangzhouSha_alt.png"];
     const profileImg = document.getElementById("profile-photo");
     let current = 0;
 
@@ -430,9 +430,15 @@
       profileImg.style.opacity = 1;
     });
 
+    let failures = 0;
     profileImg.addEventListener("error", () => {
-      current = 0;
-      profileImg.src = photos[0];
+      failures += 1;
+      if (failures >= photos.length) {
+        profileImg.style.opacity = 1;
+        return;
+      }
+      current = (current + 1) % photos.length;
+      profileImg.src = photos[current];
     });
   </script>
 </body>
