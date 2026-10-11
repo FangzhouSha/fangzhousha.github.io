@@ -289,6 +289,50 @@
       font-size: 0.97rem;
     }
 
+    .abstract-toggle {
+      font: inherit;
+      font-weight: 500;
+      color: var(--link);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .abstract-toggle::after {
+      content: "";
+      display: inline-block;
+      width: 0.42em;
+      height: 0.42em;
+      margin-left: 0.4em;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: translateY(-0.2em) rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+
+    .abstract-toggle[aria-expanded="true"]::after {
+      transform: translateY(0.05em) rotate(-135deg);
+    }
+
+    .abstract-toggle:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .abstract {
+      margin: 0.7rem 0 0;
+      padding: 0.2rem 0 0.2rem 1rem;
+      border-left: 2px solid var(--rule);
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .abstract p {
+      margin: 0;
+    }
+
     .group-label {
       margin-top: 1.6rem;
       margin-bottom: 0.4rem;
@@ -418,7 +462,12 @@
         <div class="paper-note">Outstanding Graduate Student Award, Southern Economic Association (2025)</div>
         <div class="paper-note">Presented at: Federal Reserve Bank of Cleveland RISE Conference (2026)</div>
         <div class="doc-links">
+          <button type="button" class="abstract-toggle" aria-expanded="false" aria-controls="abstract-jmp">Abstract</button>
+          &nbsp;·&nbsp;
           <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+        </div>
+        <div class="abstract" id="abstract-jmp" hidden>
+          <p>When do fiscal deficits become inflationary? I answer this question in a heterogeneous-agent New Keynesian model in which households hold liquid nominal government liabilities and illiquid real capital. The answer depends on fiscal backing. Deficits that are not backed by higher expected future primary surpluses generate much larger inflation and output responses than backed deficits, because weak backing induces households to reduce their demand for nominal government liabilities and rebalance toward real capital. This portfolio-reallocation channel makes unfunded government purchases and unfunded transfers produce nearly identical responses, while funded deficits depend more on the fiscal instrument. Easier adjustment of illiquid assets enlarges the gap between funded and unfunded deficits. The results show that portfolio choice makes fiscal backing quantitatively central for inflation.</p>
         </div>
       </div>
 
@@ -427,10 +476,16 @@
       <div class="paper-entry">
         <strong>Fiscal Policy, Inflation Stabilization, and Monetary-Fiscal Interaction</strong>
         <div class="doc-links">
+          <button type="button" class="abstract-toggle" aria-expanded="false" aria-controls="abstract-wp1">Abstract</button>
+          &nbsp;·&nbsp;
           <a href="Fiscal_Policy__Inflation_Stabilization__and_Monetary_Fiscal_Interaction.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
           &nbsp;·&nbsp;
-          <a href="https://doi.org/10.2139/ssrn.6865964" target="_blank" rel="noopener">SSRN</a>          &nbsp;·&nbsp;
+          <a href="https://doi.org/10.2139/ssrn.6865964" target="_blank" rel="noopener">SSRN</a>
+          &nbsp;·&nbsp;
           <a href="https://www.researchgate.net/publication/405695391_Fiscal_Policy_Inflation_Stabilization_and_Monetary-Fiscal_Interaction" target="_blank" rel="noopener">ResearchGate</a>
+        </div>
+        <div class="abstract" id="abstract-wp1" hidden>
+          <p>In standard New Keynesian models, the central bank stabilizes inflation and fiscal policy stabilizes government debt. This paper shows that this division must be refined when fiscal policy also moves aggregate demand. I study a simple model in which the primary surplus affects private spending and fiscal policy responds to both inflation and public debt. The paper derives a closed-form threshold for the fiscal response to debt. This threshold determines whether fiscal and monetary policy work as substitutes or complements in selecting a unique and stable equilibrium. When fiscal debt feedback is weak, a stronger fiscal response to inflation can make up for a weaker monetary response to inflation. When fiscal debt feedback is strong, a stronger fiscal response to inflation requires a stronger monetary response to inflation. At the threshold between these two cases, the monetary response to inflation no longer determines the local uniqueness condition. Instead, the model identifies a new fiscal-policy-only regime in which fiscal policy alone pins down equilibrium uniqueness.</p>
         </div>
       </div>
 
@@ -438,7 +493,12 @@
         <strong>Identifying the Effects of Funded vs. Unfunded Fiscal Shocks</strong>
         <span class="paper-note"> with Nathan S. Balke and Carlos Zarazaga</span>
         <div class="doc-links">
+          <button type="button" class="abstract-toggle" aria-expanded="false" aria-controls="abstract-wp2">Abstract</button>
+          &nbsp;·&nbsp;
           <a href="Balke_Sha_Zarazaga_Pre_Identifying.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
+        </div>
+        <div class="abstract" id="abstract-wp2" hidden>
+          <p>Conventional VAR practice attributes unexpected inflation to monetary or other structural shocks and treats fiscal policy as neutral; fiscal variables are often omitted. In these settings, shocks to primary surpluses are not allowed to be an independent source of inflation. This paper removes that implicit restriction. We distinguish funded from unfunded fiscal shocks in U.S. data from 1871–2025. Funded shocks are offset by future primary surpluses, so the present value of current and future primary surpluses is unchanged; unfunded shocks are not offset, so the present value of current and future primary surpluses changes. Because the real market value of government debt can be interpreted as the market’s assessment of the present value of expected primary surpluses, the two cases imply distinct restrictions—for example, a funded deficit shock should raise the current real market value of debt one-for-one with the deficit, whereas no such restriction holds for unfunded shocks. Within a parsimonious structural VAR, we exploit budget-identity-based restrictions to identify funded versus unfunded shocks and quantify their effects on economic activity, achieving clear identification without relying on large structural models. Using U.S. data from 1959 to 2025, we find that unfunded fiscal shocks, on impact, raise inflation, boost real GDP growth, lower the nominal return on government debt, and increase short- and long-term interest rates; funded shocks leave inflation near zero and adjust mainly through the real market value of debt, with smaller real-side responses. Historical decompositions show that the inflationary impact of unfunded shocks is modest in normal times but becomes salient in key episodes—turning from positive to negative around the end of the Cold War and contributing significantly to inflation during the 2008–09 crisis and the post-COVID run-up.</p>
         </div>
       </div>
 
@@ -447,6 +507,12 @@
       <div class="paper-entry">
         <strong>Financial Frictions, Firm Exit, and Aggregate Dynamics</strong>
         <span class="paper-note"> with Nathan S. Balke and Enrique Martínez-García</span>
+        <div class="doc-links">
+          <button type="button" class="abstract-toggle" aria-expanded="false" aria-controls="abstract-wip1">Abstract</button>
+        </div>
+        <div class="abstract" id="abstract-wip1" hidden>
+          <p>This paper evaluates the impact of credit frictions on the intensive and extensive margins of economic activity. We build a DSGE model with endogenous firm entry and exit. Financial frictions arise from asymmetric information between borrowers and lenders (a financial accelerator mechanism). Creating a new business venture requires loans to finance the entry cost and to fund initial operations. Established firms continue to depend on loans to finance their investment and working capital. Exit occurs when an established firm defaults on its working capital loan. We allow for persistent heterogeneity in productivity and uncertainty among new and established firms. We explore how credit frictions interact with firm heterogeneity to determine the size and age distributions of firms, as well as aggregate economic activity. We find that credit frictions have significant effects on the distribution of firms, skewing the age distribution toward younger firms and the size distribution toward smaller firms relative to an economy without credit frictions.</p>
+        </div>
       </div>
 
       <div class="paper-entry">
@@ -479,6 +545,15 @@
   </main>
 
   <script>
+    document.querySelectorAll(".abstract-toggle").forEach((btn) => {
+      const panel = document.getElementById(btn.getAttribute("aria-controls"));
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!open));
+        panel.hidden = open;
+      });
+    });
+
     const photos = ["Headshot.jpeg", "FangzhouSha.png", "FangzhouSha_alt.png"];
     const profileImg = document.getElementById("profile-photo");
     let current = 0;
