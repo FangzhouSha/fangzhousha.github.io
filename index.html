@@ -42,8 +42,10 @@
     "knowsAbout": ["Macroeconomics", "Fiscal policy", "Monetary-fiscal interaction", "Inflation", "Heterogeneous-agent models"],
     "award": [
       "Dean's Dissertation Fellowship, Moody School of Graduate and Advanced Studies, SMU (2026–2027)",
-      "Outstanding Graduate Student Instruction Award, SMU (2024–2025)",
-      "Outstanding Graduate Student Award, Southern Economic Association (2025)"
+      "Melody Rice Memorial Award, Department of Economics, SMU (2026)",
+      "Outstanding Graduate Student Award, Southern Economic Association (2025)",
+      "Outstanding Graduate Student Instruction Award, SMU (2025)",
+      "Best Third-Year Paper Award, Department of Economics, SMU (2024)"
     ],
     "sameAs": [
       "https://www.linkedin.com/in/fangzhou-sha-0941a93a7/",
@@ -98,7 +100,7 @@
     }
 
     main {
-      max-width: 840px;
+      max-width: 900px;
       margin: calc(var(--nav-height) + 4vh) auto 8vh;
     }
 
@@ -135,18 +137,61 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 296px;
+      grid-template-columns: minmax(0, 1fr) 320px;
       gap: 3.2rem;
-      align-items: start;
+      align-items: stretch;
     }
 
-    .hero-text .intro {
-      margin-top: 1.6rem;
+    .fields {
+      margin: 1.4rem 0 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    .fields-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      margin-bottom: 0.15rem;
+    }
+
+    .dated-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.97rem;
+    }
+
+    .dated-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1.2rem;
+      padding: 0.32rem 0;
+      border-bottom: 1px solid var(--rule);
+      line-height: 1.5;
+    }
+
+    .dated-list li:last-child {
+      border-bottom: none;
+    }
+
+    .dated-list .year {
+      flex-shrink: 0;
+      color: var(--subtext);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .honors-label {
+      margin-top: 2.6rem;
     }
 
     .profile-photo {
-      width: 296px;
-      height: 444px;
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
       object-fit: cover;
       object-position: center top;
       border-radius: 3px;
@@ -251,7 +296,7 @@
     }
 
     .contact {
-      margin-top: 1.6rem;
+      margin: 0.9rem 0 0;
     }
 
     footer {
@@ -290,6 +335,7 @@
         order: -1;
         width: 200px;
         height: 300px;
+        min-height: 0;
       }
 
       h3 {
@@ -306,40 +352,55 @@
   </nav>
 
   <main>
-    <section id="home" class="hero">
-      <div class="hero-text">
-        <h1>Fangzhou Sha <span class="cn-name" lang="zh-CN">沙芳洲</span></h1>
-        <h2>Ph.D. Candidate in Economics<br>Southern Methodist University</h2>
-        <span class="jm-badge">On the 2026–2027 Job Market</span>
+    <section id="home">
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Fangzhou Sha <span class="cn-name" lang="zh-CN">沙芳洲</span></h1>
+          <h2>Ph.D. Candidate in Economics<br>Southern Methodist University</h2>
+          <span class="jm-badge">On the 2026–2027 Job Market</span>
 
-        <p class="intro">
-          I am a Ph.D. candidate in Economics at Southern Methodist University. My research is in macroeconomics, with a focus on monetary-fiscal interactions, inflation, and heterogeneous-agent models.
-        </p>
+          <p class="fields"><span class="fields-label">Research fields</span>Macroeconomics · Monetary Economics · Applied Macroeconomics</p>
 
-        <p class="subtle">
-          <a href="https://www.smu.edu/moody/funding/deans-dissertation-fellowships/fangzhou-sha" target="_blank" rel="noopener">Dean's Dissertation Fellow</a>, Moody School of Graduate and Advanced Studies, 2026–2027
-        </p>
+          <div class="doc-links">
+            <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Job Market Paper (PDF)</a>
+            &nbsp;·&nbsp;
+            <a href="FangzhouSha_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
+            &nbsp;·&nbsp;
+            <a href="https://www.linkedin.com/in/fangzhou-sha-0941a93a7/" target="_blank" rel="noopener me">LinkedIn</a>
+          </div>
 
-        <div class="doc-links">
-          <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Job Market Paper (PDF)</a>
-          &nbsp;·&nbsp;
-          <a href="FangzhouSha_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
-          &nbsp;·&nbsp;
-          <a href="https://www.linkedin.com/in/fangzhou-sha-0941a93a7/" target="_blank" rel="noopener me">LinkedIn</a>
+          <p class="contact">
+            <a href="mailto:fsha@smu.edu">fsha@smu.edu</a>
+          </p>
+
+          <div class="group-label">Selected Presentations</div>
+          <ul class="dated-list">
+          <li><span><a href="https://www.clevelandfed.org/-/media/project/clevelandfedtenant/clevelandfedsite/events/2026/rise2026_program.pdf" target="_blank" rel="noopener">RISE Conference</a>, Federal Reserve Bank of Cleveland</span><span class="year">2026</span></li>
+          <li><span>Southern Economic Association Annual Meeting</span><span class="year">2026</span></li>
+          <li><span>Southern Economic Association Graduate Student Sessions</span><span class="year">2025</span></li>
+          <li><span>North Texas Economic Conference, UT Arlington</span><span class="year">2025</span></li>
+          </ul>
         </div>
 
-        <p class="contact">
-          <a href="mailto:fsha@smu.edu">fsha@smu.edu</a>
-        </p>
+        <img
+          src="Headshot.jpeg"
+          alt="Photo of Fangzhou Sha"
+          class="profile-photo"
+          id="profile-photo"
+          width="320" height="480"
+        >
       </div>
 
-      <img
-        src="Headshot.jpeg"
-        alt="Photo of Fangzhou Sha"
-        class="profile-photo"
-        id="profile-photo"
-        width="296" height="444"
-      >
+      <div class="group-label honors-label">Honors and Awards</div>
+      <ul class="dated-list">
+        <li><span><a href="https://www.smu.edu/moody/funding/deans-dissertation-fellowships/fangzhou-sha" target="_blank" rel="noopener">Dean&#39;s Dissertation Fellowship</a>, Moody School of Graduate and Advanced Studies, SMU</span><span class="year">2026–2027</span></li>
+        <li><span><a href="https://blog.smu.edu/economics/2026/02/03/melody-rice-award-congrats-fangzhou-sha/" target="_blank" rel="noopener">Melody Rice Memorial Award</a>, Department of Economics, SMU</span><span class="year">2026</span></li>
+        <li><span>Outstanding Graduate Student Award, Southern Economic Association</span><span class="year">2025</span></li>
+        <li><span><a href="https://www.smu.edu/moody/current-students/graduate-student-teaching-awards" target="_blank" rel="noopener">Outstanding Graduate Student Instruction Award</a>, SMU</span><span class="year">2025</span></li>
+        <li><span>Provost&#39;s Summer Research Grant, SMU</span><span class="year">2025</span></li>
+        <li><span>Best Third-Year Paper Award, Department of Economics, SMU</span><span class="year">2024</span></li>
+        <li><span>Provost&#39;s Doctoral Candidacy Fellowship, SMU</span><span class="year">2023–2026</span></li>
+      </ul>
     </section>
 
     <section id="research">
